@@ -2,12 +2,16 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'pm-root',
+  // templateUrl: './app.component.html'
   template: `
-  <div><h1>{{pageTitle}}</h1>
-    <div>My First Component</div>
+  <div><h1 innerText={{getTitle()}}></h1>
+    <pm-products></pm-products>
   </div>
   `
 })
 export class AppComponent {
-  pageTitle = 'Acme Product Management';
+  pageTitle: string = 'Acme Product Management';
+  private getTitle(): string{
+    return this.pageTitle;  
+  }
 }
